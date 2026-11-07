@@ -1,0 +1,52 @@
+# Toolchains & Portable Environments (Downloaded locally)
+android-sdk/
+jdk/
+platform-tools/
+.gradle/
+tools/
+
+# Android Build Outputs & Intermediate Files
+build/
+**/build/
+.cxx/
+**/.cxx/
+local.properties
+*.apk
+*.aab
+
+# Model Weights & Large Checkpoints (>100MB)
+checkpoints/*.pt
+checkpoints/*.eer
+checkpoints/*.bin
+*.pt
+*.eer
+
+# Python Caches & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+env/
+venv/
+.env
+
+# Native Artifacts & Executables
+*.o
+*.obj
+embeddra_cli_arm64
+test_*
+probe_*
+
+# Temporary & Diagnostic Files
+*.log
+scratch/
+screen_check.png
+gpu_mobile_inference.png
+
+# IDE & OS Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

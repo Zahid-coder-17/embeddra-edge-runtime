@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0F172A">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMBEDDRA EDGE RUNTIME"
+        android:textColor="#38BDF8"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maria-1B (HyperGQE) On-Device Inference"
+        android:textColor="#94A3B8"
+        android:textSize="13sp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Status Badge -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status: Uninitialized (Offline)"
+        android:textColor="#FBBF24"
+        android:background="#1E293B"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Load Model Button -->
+    <Button
+        android:id="@+id/loadButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Local Maria-1B Checkpoint"
+        android:backgroundTint="#2563EB"
+        android:textColor="#FFFFFF" />
+
+    <!-- Prompt Input -->
+    <EditText
+        android:id="@+id/promptInput"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:hint="Enter prompt (e.g. Clinical assessment, symptoms)..."
+        android:textColorHint="#64748B"
+        android:textColor="#F8FAFC"
+        android:background="#1E293B"
+        android:gravity="top|start"
+        android:padding="10dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/generateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Generate"
+            android:enabled="false"
+            android:backgroundTint="#10B981"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stop"
+            android:enabled="false"
+            android:backgroundTint="#EF4444"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Response Area -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Model Response:"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:layout_marginTop="12dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1E293B"
+        android:padding="10dp"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/responseText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#F8FAFC"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <!-- Latency & Performance Bar -->
+    <TextView
+        android:id="@+id/statsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TTFT: -- ms | Speed: -- tok/s | Total: -- ms"
+        android:textColor="#38BDF8"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
+

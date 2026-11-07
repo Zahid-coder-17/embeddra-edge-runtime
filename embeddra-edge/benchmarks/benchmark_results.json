@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-11-06 19:01:05",
+  "model_name": "Maria-1B (HyperGQE)",
+  "perplexity_benchmarks": {
+    "PubMed_Biomedical": {
+      "tokens": 101,
+      "loss": 4.0923,
+      "perplexity": 59.87
+    },
+    "ComputerScience_arXiv": {
+      "tokens": 71,
+      "loss": 4.853,
+      "perplexity": 128.12
+    },
+    "Clinical_QA": {
+      "tokens": 65,
+      "loss": 4.8242,
+      "perplexity": 124.48
+    }
+  },
+  "performance_benchmarks": [
+    {
+      "prompt_tokens": 16,
+      "generated_tokens": 32,
+      "ttft_ms": 231.06,
+      "gen_time_sec": 5.128,
+      "throughput_tok_per_sec": 6.24
+    },
+    {
+      "prompt_tokens": 32,
+      "generated_tokens": 32,
+      "ttft_ms": 264.32,
+      "gen_time_sec": 5.135,
+      "throughput_tok_per_sec": 6.23
+    },
+    {
+      "prompt_tokens": 64,
+      "generated_tokens": 32,
+      "ttft_ms": 394.46,
+      "gen_time_sec": 5.227,
+      "throughput_tok_per_sec": 6.12
+    }
+  ],
+  "memory_footprint": {
+    "Weights_FP16_GB": 2.49,
+    "Weights_INT8_GB": 1.28,
+    "KV_Cache_2048_Context_MB": 144.0,
+    "Working_Activations_MB": 2.5,
+    "Total_Peak_RAM_FP16_GB": 2.73,
+    "Total_Peak_RAM_INT8_GB": 1.52
+  },
+  "architecture_audit": {
+    "num_layers": 18,
+    "hidden_size": 2048,
+    "intermediate_size": 5632,
+    "num_q_heads": 16,
+    "num_kv_heads": 4,
+    "head_dim": 128,
+    "router_dim": "2048 -> 16 (4 groups of 4 experts)",
+    "hyper_rank": 16,
+    "hypernet_dimensions": "W_D: [32768, 64], W_U: [2048, 64]",
+    "o_proj_dimension": "768 -> 2048",
+    "o_proj_parameter_reduction": "62.5% reduction vs standard 2048x2048",
+    "total_unique_parameters": "1,074,374,656 (1.074B)"
+  }
+}
